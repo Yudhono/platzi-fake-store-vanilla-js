@@ -1,0 +1,30 @@
+#productForm {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+#productForm input {
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+#productForm button {
+  padding: 10px;
+  border: none;
+  border-radius: 3px;
+  background-color: #28a745;
+  color: white;
+  cursor: pointer;
+}
+
+#productForm button:hover {
+  background-color: #218838;
+}
