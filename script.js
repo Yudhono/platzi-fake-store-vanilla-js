@@ -45,5 +45,16 @@ document
       .then((response) => response.json())
 
       // Displaying results to console
-      .then((json) => console.log(json));
+      .then((json) => {
+        console.log(json);
+        Swal.fire({
+          title: "Success!",
+          text: "Product added successfully!",
+          icon: "success",
+          confirmButtonText: "OK",
+        }).then(() => {
+          window.location.href = "index.html";
+        });
+      })
+      .catch((error) => console.error("Error adding product:", error));
   });
