@@ -4,18 +4,21 @@ document.addEventListener("DOMContentLoaded", function () {
   fetch(apiUrl)
     .then((response) => response.json())
     .then((products) => {
+      console.log(77321, "products", products);
       // Sort products by creationAt in descending order
       products.sort((a, b) => new Date(b.creationAt) - new Date(a.creationAt));
 
       const productList = document.getElementById("productList");
       products.forEach((product) => {
-        console.log(882, "prodcut", product.images);
+        
         const productItem = document.createElement("div");
         productItem.className = "product-item";
+        
         const truncatedDescription =
           product.description.length > 100
             ? product.description.substring(0, 100) + "..."
             : product.description;
+
         productItem.innerHTML = `
           <h2>${product.title}</h2>
           <p>Price: $${product.price}</p>

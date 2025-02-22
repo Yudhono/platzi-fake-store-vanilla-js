@@ -6,12 +6,14 @@ document.addEventListener("DOMContentLoaded", function () {
   fetch(apiUrl)
     .then((response) => response.json())
     .then((product) => {
+      console.log(88321, 'single product', product);
+
       document.getElementById("editProductTitle").value = product.title;
       document.getElementById("editProductPrice").value = product.price;
       document.getElementById("editProductDescription").value =
         product.description;
       document.getElementById("editProductCategoryId").value =
-        product.categoryId;
+        product.category.id;
       document.getElementById("editProductImage").value = product.images[0];
     })
     .catch((error) => console.error("Error fetching product:", error));
@@ -45,7 +47,16 @@ document.addEventListener("DOMContentLoaded", function () {
       })
         .then((response) => response.json())
         .then((json) => {
-          console.log(json);
+          console.log(888312, 'json',json);
+          if(json.statusCode !== 200) {
+            Swal.fire({
+              title: "Error, Product not updated!",
+              text: json.message,
+              icon: "error",
+              confirmButtonText: "OK",
+            });
+            return;
+          }
           Swal.fire({
             title: "Success!",
             text: "Product updated successfully!",
