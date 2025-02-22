@@ -21,9 +21,16 @@ document.addEventListener("DOMContentLoaded", function () {
           <p>Price: $${product.price}</p>
           <p>${truncatedDescription}</p>
           <img src="${product.images[0]}" alt="${product.title}" />
-          <button class="add-to-cart">Add to Cart</button>
+          <button class="edit-product" data-id="${product.id}">Edit</button>
         `;
         productList.appendChild(productItem);
+      });
+
+      document.querySelectorAll(".edit-product").forEach((button) => {
+        button.addEventListener("click", function () {
+          const productId = this.getAttribute("data-id");
+          window.location.href = `edit-product.html?id=${productId}`;
+        });
       });
     })
     .catch((error) => console.error("Error fetching products:", error));

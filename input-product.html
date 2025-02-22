@@ -6,18 +6,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Product</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="input-product.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body>
-    <form id="productForm">
-        <input type="text" id="inputProductTitle" placeholder="Enter the Title of product">
-        <input type="text" id="inputProductPrice" placeholder="Enter the price of product">
-        <input type="text" id="inputProductDescription" placeholder="Enter the Description of product">
-        <input type="text" id="inputProductCategoryId" placeholder="Enter the category ID of product">
-        <input type="text" id="inputProductImage" placeholder="Enter the image of product">
-        <button type="submit">Add Product</button>
-    </form>
+    <div class="container">
+        <h1>Add Product</h1>
+        <form id="productForm">
+            <div class="form-group">
+                <label for="inputProductTitle">Title</label>
+                <input type="text" id="inputProductTitle" placeholder="Enter the Title of product">
+            </div>
+            <div class="form-group">
+                <label for="inputProductPrice">Price</label>
+                <input type="text" id="inputProductPrice" placeholder="Enter the price of product">
+            </div>
+            <div class="form-group">
+                <label for="inputProductDescription">Description</label>
+                <input type="text" id="inputProductDescription" placeholder="Enter the Description of product">
+            </div>
+            <div class="form-group">
+                <label for="inputProductCategoryId">Category ID</label>
+                <input type="text" id="inputProductCategoryId" placeholder="Enter the category ID of product">
+            </div>
+            <div class="form-group">
+                <label for="inputProductImage">Image URL</label>
+                <input type="text" id="inputProductImage" placeholder="Enter the image URL of product">
+            </div>
+            <button type="submit">Add Product</button>
+        </form>
+    </div>
     <script src="script.js"></script>
 </body>
 
