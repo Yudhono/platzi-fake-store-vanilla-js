@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
   fetch(apiUrl)
     .then((response) => response.json())
     .then((product) => {
-      console.log(88321, 'single product', product);
+      console.log(88321, "single product", product);
 
       document.getElementById("editProductTitle").value = product.title;
       document.getElementById("editProductPrice").value = product.price;
@@ -47,8 +47,8 @@ document.addEventListener("DOMContentLoaded", function () {
       })
         .then((response) => response.json())
         .then((json) => {
-          console.log(888312, 'json',json);
-          if(json.statusCode !== 200) {
+          console.log(888312, "json", json);
+          if (json.error) {
             Swal.fire({
               title: "Error, Product not updated!",
               text: json.message,
@@ -57,14 +57,17 @@ document.addEventListener("DOMContentLoaded", function () {
             });
             return;
           }
-          Swal.fire({
-            title: "Success!",
-            text: "Product updated successfully!",
-            icon: "success",
-            confirmButtonText: "OK",
-          }).then(() => {
-            window.location.href = "index.html";
-          });
+          if (json.id) {
+            Swal.fire({
+              title: "Success!",
+              text: "Product updated successfully!",
+              icon: "success",
+              confirmButtonText: "OK",
+            }).then(() => {
+              window.location.href = "index.html";
+            });
+            return;
+          }
         })
         .catch((error) => console.error("Error updating product:", error));
     });
