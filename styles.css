@@ -88,3 +88,11 @@ button:hover {
   font-size: 14px;
   color: #555;
 }
+
+.delete-product {
+  background-color: red;
+}
+
+.delete-product:hover {
+  background-color: darkred;
+}
