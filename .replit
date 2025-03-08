@@ -1,0 +1,15 @@
+modules = ["nodejs-20", "web"]
+
+[nix]
+channel = "stable-24_05"
+
+[workflows]
+runButton = "Static Server"
+
+[[workflows.workflow]]
+name = "Static Server"
+author = 36994801
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "npx http-server -p 3000 -a 0.0.0.0 --cors"
