@@ -39,7 +39,6 @@ h1 {
 }
 
 button {
-  display: block;
   margin: 20px auto;
   padding: 10px 20px;
   background-color: #007bff;
@@ -49,7 +48,17 @@ button {
   cursor: pointer;
 }
 
-button:hover {
+.addProductButton {
+  margin: 20px auto;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.addProductButton:hover {
   background-color: #0056b3;
 }
 
@@ -109,6 +118,7 @@ button:hover {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0 3.5rem 0 3.5rem;
 }
 
 .cartIcon {
@@ -120,4 +130,14 @@ button:hover {
   padding: 0;
   margin: 0;
   font-size: 1.5rem;
+}
+
+.addProductButtonContainer {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+}
+
+.buttonContainer {
+  padding: 0 4rem 0 4rem;
 }
