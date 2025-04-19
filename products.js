@@ -26,13 +26,22 @@ document.addEventListener("DOMContentLoaded", function () {
           <button class="edit-product" data-id="${product.id}">Edit</button>
           <button class="delete-product" data-id="${product.id}">Delete</button>
         `;
+        productItem.setAttribute("data-id", product.id);
         productList.appendChild(productItem);
       });
 
       document.querySelectorAll(".edit-product").forEach((button) => {
-        button.addEventListener("click", function () {
+        button.addEventListener("click", function (event) {
+          event.stopPropagation();
           const productId = this.getAttribute("data-id");
           window.location.href = `edit-product.html?id=${productId}`;
+        });
+      });
+
+      document.querySelectorAll(".product-item").forEach((productItem) => {
+        productItem.addEventListener("click", function () {
+          const productId = this.getAttribute("data-id");
+          window.location.href = `product-details.html?id=${productId}`;
         });
       });
 

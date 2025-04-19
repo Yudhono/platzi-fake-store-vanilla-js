@@ -82,6 +82,10 @@ button {
   transition: all 0.3s;
 }
 
+.product-item:hover {
+  background-color: #eef2f6;
+}
+
 .product-item img {
   max-width: 100%;
   height: auto;
