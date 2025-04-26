@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
     .then((response) => response.json())
     .then((product) => {
       console.log(88321, "single product", product);
+      console.log(88321, "product", product);
 
       document.getElementById("editProductTitle").value = product.title;
       document.getElementById("editProductPrice").value = product.price;

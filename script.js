@@ -2,6 +2,7 @@ document
   .getElementById("productForm")
   .addEventListener("submit", function (event) {
     event.preventDefault();
+    console.log(88321, "submit", event);
     const productTitle = document.getElementById("inputProductTitle").value;
     const productPrice = document.getElementById("inputProductPrice").value;
     const productDescription = document.getElementById(

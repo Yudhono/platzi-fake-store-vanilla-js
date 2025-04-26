@@ -8,6 +8,8 @@ document.addEventListener("DOMContentLoaded", function () {
       // Sort products by creationAt in descending order
       products.sort((a, b) => new Date(b.creationAt) - new Date(a.creationAt));
 
+      console.log(77321, "sorted products", products);
+
       const productList = document.getElementById("productList");
       products.forEach((product) => {
         const productItem = document.createElement("div");
