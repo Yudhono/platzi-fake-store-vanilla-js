@@ -1,0 +1,14 @@
+.footerClass {
+  background-color: #ababab;
+}
+
+.footerContentContainer {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.footerLogo {
+  width: 125px;
+  height: 100px;
+}
