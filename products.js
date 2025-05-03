@@ -48,7 +48,8 @@ document.addEventListener("DOMContentLoaded", function () {
       });
 
       document.querySelectorAll(".delete-product").forEach((button) => {
-        button.addEventListener("click", function () {
+        button.addEventListener("click", function (event) {
+          event.stopPropagation();
           const productId = this.getAttribute("data-id");
 
           Swal.fire({
